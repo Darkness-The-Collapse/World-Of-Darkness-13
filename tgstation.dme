@@ -432,6 +432,7 @@
 #include "code\__DEFINES\~wod13_defines\werewolf_defines.dm"
 #include "code\__DEFINES\~wod13_defines\_globalvars\misc.dm"
 #include "code\__DEFINES\~wod13_defines\_globalvars\configuration.dm"
+#include "code\__DEFINES\~wod13_defines\_globalvars\lists\ambience.dm"
 #include "code\__DEFINES\~wod13_defines\_globalvars\lists\mobs.dm"
 #include "code\__DEFINES\~wod13_defines\_globalvars\lists\names.dm"
 #include "code\__DEFINES\~wod13_defines\_globalvars\lists\objects.dm"
@@ -6791,5 +6792,8 @@
 #include "wod13\master_files\code\modules\client\preferences.dm"
 #include "wod13\master_files\code\modules\mob\living\living_defines.dm"
 #include "wod13\master_files\code\modules\mob\living\carbon\human\human.dm"
+#include "wod13\modules\stubs.dm"
 #include "wod13\modules\pig\pig.dm"
+#include "wod13\modules\vtmb\archetypes.dm"
+#include "wod13\modules\wod13\ambient.dm"
 // END_INCLUDE
