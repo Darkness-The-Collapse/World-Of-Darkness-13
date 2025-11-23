@@ -13,3 +13,11 @@ SUBSYSTEM_DEF(city_time)
 	var/timeofnight = "21:00"
 
 /obj/item/stack/dollar
+
+/mob/living/carbon/human/npc
+/mob/living/carbon/human/npc/proc/Aggro(mob/M, attacked = FALSE)
+
+/mob/living/carbon/human/proc/AdjustHumanity(value, limit, forced = FALSE)
+/mob/living/carbon/human/proc/AdjustMasquerade(value, forced = FALSE)
+/mob/living/carbon/human/npc/proc/backinvisible(atom/A)
+/mob/living/proc/CheckEyewitness(mob/living/source, mob/attacker, range = 0, affects_source = FALSE)

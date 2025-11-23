@@ -23,3 +23,4 @@
 #define TRAIT_UNMASQUERADE		"unmasquerade"	//For tzi clothing
 #define TRAIT_NONMASQUERADE		"nonmasquerade"	//For tzi mods
 #define TRAIT_ELYSIUM			"elysium"
+#define TRAIT_TORPOR			"torpor" //A special form of fakedeath that vampires go into rather than dying above -200 health
