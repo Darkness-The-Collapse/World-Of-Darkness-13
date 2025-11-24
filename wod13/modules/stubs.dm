@@ -37,3 +37,9 @@ mob/living/carbon/human/npc/proc/Aggro(mob/M, attacked = FALSE)
 /proc/get_a_willpower(mob/living/Living)
 /mob/living/carbon/proc/CheckFrenzyMove()
 	return TRUE
+/datum/warform
+/datum/warform/proc/transform(animal_atom, mob/living/carbon/human/owner, masquerady = TRUE, time)
+
+/mob/living/simple_animal
+	var/datum/warform/warform
+	var/mob/living/carbon/human/my_creator
