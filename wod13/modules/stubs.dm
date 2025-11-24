@@ -16,8 +16,19 @@
 /mob/living/carbon/human/npc/proc/backinvisible(atom/A)
 /mob/living/proc/CheckEyewitness(mob/living/source, mob/attacker, range = 0, affects_source = FALSE)
 
-/proc/call_dharma(action, mob/living/carbon/human/cathayan)
-
 /datum/morality_path
 /datum/morality_path/proc/trigger_morality(trig_event)
 /mob/living/simple_animal/hostile/zombie
+
+/proc/get_vamp_skin_color(value = "albino")
+	return "vamp1"
+
+/datum/action/breathe_chi
+/datum/action/area_chi
+/mob/living/carbon/proc/enter_frenzymod()
+/mob/living/carbon/proc/frenzystep()
+/datum/preferences/proc/reset_character()
+/atom/movable/screen/drinkblood
+	name = "Drink Blood"
+	icon = 'code/modules/wod13/disciplines.dmi'
+/atom/movable/screen/drinkblood/proc/bite()

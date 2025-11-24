@@ -1,4 +1,5 @@
 /datum/preferences
+	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
 	// Generation
 	var/generation = 13
 	var/generation_bonus = 0
@@ -139,3 +140,155 @@
 
 /datum/preferences/proc/add_experience(amount)
 	true_experience = clamp(true_experience + amount, 0, 1000)
+
+/proc/reset_shit(mob/M)
+	if(M.key)
+		var/datum/preferences/P = GLOB.preferences_datums[ckey(M.key)]
+		if(P)
+			P.reset_character()
+
+/datum/preferences/proc/verify_attributes()
+	Strength = min(Strength, get_gen_attribute_limit("Strength"))
+	Dexterity = min(Dexterity, get_gen_attribute_limit("Dexterity"))
+	Stamina = min(Stamina, get_gen_attribute_limit("Stamina"))
+
+	Charisma = min(Charisma, get_gen_attribute_limit("Charisma"))
+	Manipulation = min(Manipulation, get_gen_attribute_limit("Manipulation"))
+	Appearance = min(Appearance, get_gen_attribute_limit("Appearance"))
+
+	Perception = min(Perception, get_gen_attribute_limit("Perception"))
+	Intelligence = min(Intelligence, get_gen_attribute_limit("Intelligence"))
+	Wits = min(Wits, get_gen_attribute_limit("Wits"))
+
+/datum/preferences/proc/get_gen_attribute_limit(attribute)
+	var/level
+
+	if(pref_species.name == "Vampire")
+		level = generation - generation_bonus
+	else if(pref_species.name == "Werewolf")
+		level = auspice_level
+	else if(pref_species.name == "Kuei-Jin")
+		level = dharma_level
+	else
+		level = 13
+
+	if(pref_species.name == "Vampire")
+		switch(level)
+			if(9)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 6
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 4
+				else
+					return 3
+			if(8)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 7
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 5
+				else
+					return 3
+			if(7)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 8
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 6
+				else
+					return 4
+			if(6)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 9
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 7
+				else
+					return 5
+		if(level > 9)
+			if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+				return 5
+			else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+				return 4
+			else
+				return 3
+		if(level < 6)
+			if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+				return 10
+			else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+				return 8
+			else
+				return 6
+
+	if(pref_species.name == "Kuei-Jin")
+		switch(level)
+			if(1)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 5
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 4
+				else
+					return 3
+			if(2)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 6
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 4
+				else
+					return 3
+			if(3)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 7
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 5
+				else
+					return 3
+			if(4)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 8
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 6
+				else
+					return 4
+			if(5)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 9
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 7
+				else
+					return 5
+			if(6)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 10
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 8
+				else
+					return 6
+
+	if(pref_species.name == "Werewolf")
+		switch(level)
+			if(1)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 5
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 4
+				else
+					return 3
+			if(2)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 6
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 4
+				else
+					return 3
+			if(3)
+				if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+					return 7
+				else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+					return 5
+				else
+					return 3
+
+	if(attribute == main_physical_attribute || attribute == main_social_attribute || attribute == main_mental_attribute)
+		return 5
+	else if(attribute == secondary_physical_attribute || attribute == secondary_social_attribute || attribute == secondary_mental_attribute)
+		return 4
+	else
+		return 3
