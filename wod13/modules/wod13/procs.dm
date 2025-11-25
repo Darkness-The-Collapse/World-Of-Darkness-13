@@ -345,3 +345,17 @@
 			return "vamp11"
 		else
 			return value
+
+/mob/living/proc/get_health_difficulty()
+	if(HAS_TRAIT(src, TRAIT_PAIN_NUMBING))
+		return 0
+	if(health > maxHealth*0.6)
+		return 0
+	else if(health > maxHealth*0.4)
+		return 1
+	else if(health > maxHealth*0.2)
+		return 2
+	else if(health > HEALTH_THRESHOLD_FULLCRIT)
+		return 5
+	else
+		return 10

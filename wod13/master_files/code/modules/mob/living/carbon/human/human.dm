@@ -16,6 +16,8 @@
 	var/base_body_mod = ""
 	var/icon/body_sprite
 
+	var/bank_id
+
 /mob/living/carbon/human/Initialize(mapload)
 	. = ..()
 	phonevoicetag = length(GLOB.human_list)+10

@@ -19,9 +19,7 @@
 	name = "Drink Blood"
 	icon = 'code/modules/wod13/disciplines.dmi'
 /atom/movable/screen/drinkblood/proc/bite()
-/proc/secret_vampireroll(dices_num = 1, hardness = 1, mob/living/rollperformer, stealthy = FALSE, decap_rolls = TRUE, autosuccesses = 0)
 /turf/open/floor/plating/shit
-/proc/get_a_willpower(mob/living/Living)
 /mob/living/carbon/proc/CheckFrenzyMove()
 	return TRUE
 /datum/warform
@@ -44,3 +42,9 @@
 /mob/living/carbon/werewolf
 /datum/socialrole/hunter
 /datum/antagonist/small_hunter
+/datum/vampireclane/setite
+	var/last_setite_warning = 0
+/obj/structure/vaultdoor/pincode/bank
+	var/pincode
+/proc/find_door_pin(door_type)
+/datum/garou_tribe/wendigo

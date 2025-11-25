@@ -6837,6 +6837,7 @@
 #include "wod13\modules\vtmb\subsystems\faction_mark.dm"
 #include "wod13\modules\vtmb\subsystems\graveyard.dm"
 #include "wod13\modules\vtmb\vampire_clane\clane.dm"
+#include "wod13\modules\vtmb\werewolf\_tribes.dm"
 #include "wod13\modules\vtmb\werewolf\auspice.dm"
 #include "wod13\modules\wod13\ambient.dm"
 #include "wod13\modules\wod13\ammostack.dm"
