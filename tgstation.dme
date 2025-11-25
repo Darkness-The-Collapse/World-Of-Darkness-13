@@ -6815,6 +6815,7 @@
 #include "wod13\modules\vtmb\disciplines\_define.dm"
 #include "wod13\modules\vtmb\disciplines\_disc_power.dm"
 #include "wod13\modules\vtmb\disciplines\animalism.dm"
+#include "wod13\modules\vtmb\disciplines\bloodheal.dm"
 #include "wod13\modules\vtmb\disciplines\celerity.dm"
 #include "wod13\modules\vtmb\disciplines\potence.dm"
 #include "wod13\modules\vtmb\disciplines\presence.dm"
