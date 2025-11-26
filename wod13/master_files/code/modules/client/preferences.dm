@@ -4,6 +4,8 @@
 	var/generation = 13
 	var/generation_bonus = 0
 
+	var/datum/vampireclane/clane = new /datum/vampireclane/brujah()
+
 	// Diablerie
 	var/know_diablerie = 0
 
@@ -137,6 +139,8 @@
 	var/secondary_mental_attribute = "Intelligence"
 
 	var/old_enough_to_get_exp = FALSE
+	var/old_discipline = FALSE
+
 
 /datum/preferences/proc/add_experience(amount)
 	true_experience = clamp(true_experience + amount, 0, 1000)
