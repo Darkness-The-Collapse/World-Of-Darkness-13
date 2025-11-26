@@ -18,6 +18,9 @@
 
 	var/bank_id
 
+	var/can_be_embraced = TRUE
+	COOLDOWN_DECLARE(blush_timer)
+
 /mob/living/carbon/human/Initialize(mapload)
 	. = ..()
 	phonevoicetag = length(GLOB.human_list)+10
