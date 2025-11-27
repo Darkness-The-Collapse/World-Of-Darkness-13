@@ -1,8 +1,10 @@
 // TEMPORAL DEFINES, DATUMS ETC. WHILE BUILD TRANSFERING TO MODERN TG
-/datum/species/kindred
-	name = "Vampire"
-
 /datum/species/ghoul
+	var/mob/living/carbon/human/master
+	var/changed_master = FALSE
+	var/last_vitae = 0
+	var/list/datum/discipline/disciplines = list()
+
 /datum/species/kuei_jin
 /datum/species/garou
 
@@ -48,3 +50,23 @@
 	var/pincode
 /proc/find_door_pin(door_type)
 /datum/garou_tribe/wendigo
+
+/datum/vampireclane/true_brujah
+/datum/vampireclane/brujah
+/datum/vampireclane/old_clan_tzimisce
+/datum/vampireclane/tzimisce
+/datum/chi_discipline
+	var/level
+/datum/chi_discipline/proc/post_gain(mob/living/carbon/human/user)
+	return
+/datum/action/chi_discipline
+	var/level_icon_state = "1" //And this is the state for the action icon
+	var/datum/chi_discipline/discipline
+	var/active_check = FALSE
+
+/datum/vampireclane/caitiff
+/obj/effect/landmark/sarcophagus
+/datum/antagonist/sabbatist
+/datum/antagonist/noddist
+/proc/get_gen_bloodpool(gen)
+/mob/living/proc/update_blood_hud()

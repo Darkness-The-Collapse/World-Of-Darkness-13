@@ -141,6 +141,8 @@
 	var/old_enough_to_get_exp = FALSE
 	var/old_discipline = FALSE
 
+	var/slotlocked = 0
+
 
 /datum/preferences/proc/add_experience(amount)
 	true_experience = clamp(true_experience + amount, 0, 1000)
