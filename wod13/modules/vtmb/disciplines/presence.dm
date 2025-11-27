@@ -333,7 +333,7 @@
 	name = "Stay/Follow (Presence)"
 	desc = "Tell your Presence-thralled NPC to stay put or follow."
 	button_icon_state = "wait"
-	button_icon = 'wod13/code/modules/vtmb/icons/actions.dmi'
+	button_icon = 'wod13/modules/vtmb/icons/actions.dmi'
 	var/cool_down = 0
 	var/following = TRUE
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING|AB_CHECK_CONSCIOUS

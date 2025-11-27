@@ -73,7 +73,7 @@
 	name = "Give Vitae"
 	desc = "Give your vitae to someone, make the Blood Bond."
 	button_icon_state = "vitae"
-	button_icon = 'wod13/code/modules/vtmb/icons/actions.dmi'
+	button_icon = 'wod13/modules/vtmb/icons/actions.dmi'
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING|AB_CHECK_CONSCIOUS
 	vampiric = TRUE
 	var/giving = FALSE
@@ -336,7 +336,7 @@
 	name = "Blush of Life"
 	desc = "Mimic a living being."
 	button_icon_state = "blush_of_life"
-	button_icon = 'wod13/code/modules/vtmb/icons/actions.dmi'
+	button_icon = 'wod13/modules/vtmb/icons/actions.dmi'
 	check_flags = AB_CHECK_CONSCIOUS
 	vampiric = TRUE
 	var/cooldown = 3 SECONDS
