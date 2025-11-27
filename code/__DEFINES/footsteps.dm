@@ -100,7 +100,7 @@ GLOBAL_LIST_INIT(footstep, list(
 		'sound/effects/footstep/catwalk3.ogg',
 		'sound/effects/footstep/catwalk4.ogg',
 		'sound/effects/footstep/catwalk5.ogg'), 100, 1),
-/// WOD 13 EDIT BEGIN
+/// WOD 13 EDIT ADDITION START - wod13
 	FOOTSTEP_PARKET = list(list(
 		'code/modules/wod13/sounds/parket1.ogg',
 		'code/modules/wod13/sounds/parket2.ogg',
@@ -118,7 +118,7 @@ GLOBAL_LIST_INIT(footstep, list(
 		'code/modules/wod13/sounds/trotuar1.ogg',
 		'code/modules/wod13/sounds/trotuar2.ogg',
 		'code/modules/wod13/sounds/trotuar3.ogg'), 75, 1)
-///// WOD 13 EDIT END
+///// WOD 13 EDIT ADDITION END
 ))
 
 //bare footsteps lists
