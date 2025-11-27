@@ -1,6 +1,6 @@
 #define isnpc(A) (istype(A, /mob/living/carbon/human/npc))
 
-#define iskindred(A) (is_species(A,/datum/species/kindred))
+#define iskindred(A) (is_species(A,/datum/species/human/kindred))
 #define iscathayan(A) (is_species(A,/datum/species/kuei_jin))
 #define isghoul(A) (is_species(A,/datum/species/ghoul))
 #define isgarou(A) (is_species(A,/datum/species/garou))

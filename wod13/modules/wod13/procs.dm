@@ -368,7 +368,7 @@
 		ADD_TRAIT(src, TRAIT_TORPOR, source)
 		if (iskindred(src))
 			var/mob/living/carbon/human/vampire = src
-			var/datum/species/kindred/vampire_species = vampire.dna.species
+			var/datum/species/human/kindred/vampire_species = vampire.dna.species
 			var/torpor_length = 0 SECONDS
 			switch(humanity)
 				if(10)

@@ -338,7 +338,7 @@
 	var/following = TRUE
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING|AB_CHECK_CONSCIOUS
 
-/datum/action/presence_stay/Trigger()
+/datum/action/presence_stay/Trigger(mob/clicker, trigger_flags)
 	. = ..()
 	if(ishuman(owner))
 		if(cool_down + 10 >= world.time)
@@ -369,7 +369,7 @@
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING|AB_CHECK_CONSCIOUS
 	var/cool_down = 0
 
-/datum/action/presence_deaggro/Trigger()
+/datum/action/presence_deaggro/Trigger(mob/clicker, trigger_flags)
 	. = ..()
 	if(ishuman(owner))
 		if(cool_down+10 >= world.time)

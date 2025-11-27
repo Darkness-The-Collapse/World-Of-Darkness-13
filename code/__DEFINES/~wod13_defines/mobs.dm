@@ -1,1 +1,1 @@
-#define SPECIES_VAMPIRE "kindred"
+#define SPECIES_KINDRED "kindred"

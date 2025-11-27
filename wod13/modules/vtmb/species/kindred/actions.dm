@@ -1,22 +1,9 @@
-/**
- * This is the splat (supernatural type, game line in the World of Darkness) container
- * for all vampire-related code. I think this is stupid and I don't want any of this to
- * be the way it is, but if we're going to work with the code that's been written then
- * my advice is to centralise all stuff directly relating to vampires to here if it isn't
- * already in another organisational structure.
- *
- * The same applies to other splats, like /datum/species/garou or /datum/species/ghoul.
- * Halfsplats like ghouls are going to share some code with their fullsplats (vampires).
- * I dunno what to do about this except a reorganisation to make this stuff actually good.
- * The plan right now is to create a /datum/splat parent type and then have everything branch
- * from there, but that's for the future.
- */
-
 /datum/action/blood_power
 	name = "Blood Power"
 	desc = "Use vitae to gain supernatural abilities."
 	button_icon_state = "bloodpower"
 	button_icon = 'code/modules/wod13/UI/actions.dmi'
+	background_icon = 'code/modules/wod13/UI/actions.dmi'
 	background_icon_state = "discipline"
 	vampiric = TRUE
 
@@ -186,7 +173,7 @@
 							else
 								save_data_v = FALSE
 						BLOODBONDED.roundstart_vampire = FALSE
-						BLOODBONDED.set_species(/datum/species/kindred)
+						BLOODBONDED.set_species(/datum/species/human/kindred)
 						BLOODBONDED.clane = null
 						if(H.generation < 13)
 							BLOODBONDED.generation = H.generation+1
@@ -276,7 +263,7 @@
 					giving = FALSE
 
 					if (iskindred(BLOODBONDED))
-						var/datum/species/kindred/species = BLOODBONDED.dna.species
+						var/datum/species/human/kindred/species = BLOODBONDED.dna.species
 						if (HAS_TRAIT(BLOODBONDED, TRAIT_TORPOR) && COOLDOWN_FINISHED(species, torpor_timer))
 							BLOODBONDED.untorpor()
 
@@ -441,7 +428,7 @@
 	if (discipline.level > 0)
 		var/datum/action/discipline/action = new(discipline)
 		action.Grant(src)
-	var/datum/species/kindred/species = dna.species
+	var/datum/species/human/kindred/species = dna.species
 	species.disciplines += discipline
 
 /mob/living/carbon/human/proc/give_chi_discipline(datum/chi_discipline/discipline)
@@ -489,7 +476,7 @@
 
 	var/mob/living/carbon/human/teacher = src
 	var/datum/preferences/teacher_prefs = teacher.client.prefs
-	var/datum/species/kindred/teacher_species = teacher.dna.species
+	var/datum/species/human/kindred/teacher_species = teacher.dna.species
 
 	if (!student.client)
 		to_chat(teacher, "<span class='warning'>Your student needs to be a player!</span>")

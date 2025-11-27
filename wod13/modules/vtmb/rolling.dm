@@ -746,7 +746,7 @@ SUBSYSTEM_DEF(woddices)
 	if(.)
 		return
 
-/datum/action/aboutme/Trigger()
+/datum/action/aboutme/Trigger(mob/clicker, trigger_flags)
 	if(host)
 		ui_interact(host)
 		return
