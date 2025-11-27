@@ -4,9 +4,6 @@
 #define BASHING "bashing"
 
 
-/datum/species/kindred
-	name = "Vampire"
-
 /datum/species/ghoul
 	var/mob/living/carbon/human/master
 	var/changed_master = FALSE
