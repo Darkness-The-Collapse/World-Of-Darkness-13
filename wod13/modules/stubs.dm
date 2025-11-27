@@ -1,4 +1,12 @@
 // TEMPORAL DEFINES, DATUMS ETC. WHILE BUILD TRANSFERING TO MODERN TG
+
+#define LETHAL "lethal"
+#define BASHING "bashing"
+
+
+/datum/species/kindred
+	name = "Vampire"
+
 /datum/species/ghoul
 	var/mob/living/carbon/human/master
 	var/changed_master = FALSE
@@ -10,7 +18,11 @@
 
 /obj/item/stack/dollar
 
+/obj/item/melee/classic_baton/vampire
+
 /mob/living/simple_animal/hostile/zombie
+
+/datum/storage/concrete/vtm/holster
 
 /datum/action/breathe_chi
 /datum/action/area_chi
