@@ -481,6 +481,7 @@ SUBSYSTEM_DEF(woddices)
 	name = "About Me"
 	desc = "Check assigned role, attributes, known contacts etc."
 	button_icon_state = "masquerade"
+	button_icon = 'code/modules/vtmb/icons/actions.dmi'
 	check_flags = NONE
 	var/mob/living/carbon/human/host
 

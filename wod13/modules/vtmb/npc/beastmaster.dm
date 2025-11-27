@@ -276,6 +276,7 @@ SUBSYSTEM_DEF(beastmastering)
 	name = "Stay/Follow"
 	desc = "Command to stay or follow."
 	button_icon_state = "wait"
+	button_icon = 'code/modules/vtmb/icons/actions.dmi'
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING|AB_CHECK_CONSCIOUS
 	var/cool_down = 0
 	var/following = FALSE
