@@ -7,11 +7,14 @@
 	can_adjust = FALSE
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
-	armor = list(BASHING = 0, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 15)
+	armor_type = /datum/armor/under
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	body_worn = TRUE
 	female_sprite_flags = NO_FEMALE_UNIFORM
 	cost = 10
+
+/datum/armor/under
+	wound = 15
 
 /obj/item/clothing/under/vampire/brujah
 	name = "Punk attire"
@@ -389,7 +392,17 @@
 	name = "weirdo hat"
 	desc = "Can look dangerous or sexy despite the circumstances. Provides some kind of protection."
 	icon_state = "malkav_hat"
-	armor = list(BASHING = 3, LETHAL = 0, AGGRAVATED = 0, MELEE = 25, BULLET = 25, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head/malkav
+
+/datum/armor/head/malkav
+	bashing = 3
+	melee = 25
+	bullet = 25
+	laser = 10
+	energy = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/under/vampire/fancy_gray
 	name = "Fancy gray suit"
@@ -501,9 +514,19 @@
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	max_integrity = 250
 	resistance_flags = NONE
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/suit
 	body_worn = TRUE
 	cost = 15
+
+/datum/armor/suit
+	bashing = 1
+	lethal = 1
+	melee = 10
+	laser = 10
+	energy = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/suit/hooded/heisenberg
 	name = "chemical costume"
@@ -516,9 +539,18 @@
 	body_parts_covered = CHEST | GROIN | ARMS
 	cold_protection = CHEST | GROIN | ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	armor = list(BASHING = 2, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 100, WOUND = 10)
+	armor_type = /datum/armor/suit/heisenberg
 	hoodtype = /obj/item/clothing/head/hooded/heisenberg_hood
 	body_worn = TRUE
+
+/datum/armor/suit/heisenberg
+	bashing = 2
+	lethal = 0
+	melee = 0
+	bomb = 50
+	fire = 50
+	acid = 100
+
 
 /obj/item/clothing/head/hooded/heisenberg_hood
 	name = "chemical hood"
@@ -531,7 +563,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	flags_inv = HIDEHAIR | HIDEEARS
-	armor = list(BASHING = 2, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 50, ACID = 100, WOUND = 10)
+	armor_type = /datum/armor/suit/heisenberg
 	body_worn = TRUE
 
 /obj/item/clothing/suit/vampire/nun
@@ -696,42 +728,103 @@
 	name = "opulent coat"
 	desc = "Lavish, luxurious, and deeply purple. Slickback Clothing Co. It exudes immense energy."
 	icon_state = "slickbackcoat"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 5, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 5)
+	armor_type = /datum/armor/slickbackcoat
+
+/datum/armor/slickbackcoat
+	bashing = 1
+	lethal = 1
+	melee = 5
+	bullet = 5
+	wound = 5
 
 /obj/item/clothing/suit/vampire/jacket
 	name = "leather jacket"
 	desc = "True clothing for any punk. Provides some kind of protection."
 	icon_state = "jacket1"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 25, BULLET = 25, LASER = 10, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 25, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/jacket
+
+/datum/armor/suit/jacket
+	bashing = 2
+	lethal = 1
+	melee = 25
+	bullet = 25
+	bomb = 25
+	fire = 25
+
 
 /obj/item/clothing/suit/vampire/jacket/fbi
 	name = "Federal Bureau of Investigation jacket"
 	desc = "\"FBI OPEN UP!!\""
 	icon_state = "fbi"
-	armor = list(BASHING = 2, LETHAL = 2, AGGRAVATED = 0, MELEE = 25, BULLET = 25, LASER = 10, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 25, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/under
+
+/datum/armor/suit/under
+	bashing = 2
+	lethal = 2
+	melee = 25
+	bullet = 25
+	bomb = 25
+	fire = 25
+	acid = 10
+	wound = 25
 
 /obj/item/clothing/suit/vampire/jacket/punk
 	icon_state = "punk"
-	armor = list(BASHING = 2, LETHAL = 2, AGGRAVATED = 0, MELEE = 50, BULLET = 50, LASER = 10, ENERGY = 10, BOMB = 50, BIO = 0, RAD = 0, FIRE = 25, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/jacket
+
+/datum/armor/suit/jacket
+	bashing = 2
+	lethal = 2
+	melee = 50
+	bomb = 50
+	fire = 25
+	acid = 10
+	wound = 25
 
 /obj/item/clothing/suit/vampire/jacket/better
 	icon_state = "jacket2"
-	armor = list(BASHING = 2, LETHAL = 2, AGGRAVATED = 0, MELEE = 35, BULLET = 35, LASER = 10, ENERGY = 10, BOMB = 35, BIO = 0, RAD = 0, FIRE = 35, ACID = 10, WOUND = 35)
+	armor_type = /datum/armor/suit/jacket/better
+
+/datum/armor/suit/jacket/better
+	melee = 35
+	bullet = 35
+	bomb = 35
+	fire = 35
+	acid = 10
+	wound = 35
 
 /obj/item/clothing/suit/vampire/jacket/better/armored
 	name = "armored leather jacket"
-	armor = list(BASHING = 2, LETHAL = 2, AGGRAVATED = 0, MELEE = 45, BULLET = 45, LASER = 10, ENERGY = 10, BOMB = 35, BIO = 0, RAD = 0, FIRE = 45, ACID = 10, WOUND = 35)
+	armor_type = /datum/armor/suit/jacket/armored
+
+/datum/armor/suit/jacket/armored
+	bullet = 45
+	melee = 45
+	bomb = 35
+	fire = 45
+	acid = 10
+	wound = 35
 
 /obj/item/clothing/suit/vampire/trench
 	name = "trenchcoat"
 	desc = "Best noir clothes for night. Provides some kind of protection."
 	icon_state = "trench1"
-	armor = list(BASHING = 2, LETHAL = 2, AGGRAVATED = 0, MELEE = 25, BULLET = 25, LASER = 10, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 25, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/under
 
 /obj/item/clothing/suit/vampire/trench/armored
 	name = "armored trenchcoat"
-	armor = list(BASHING = 3, LETHAL = 4, AGGRAVATED = 1, MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/armored
 	max_integrity = 1000
+
+/datum/armor/suit/armored
+	bashing = 3
+	lethal = 4
+	aggravated = 1
+	melee = 50
+	bullet = 50
+	laser = 50
+	bomb = 40
+	fire = 40
 
 /obj/item/clothing/suit/vampire/trench/armored/red
 	name = "red trenchcoat"
@@ -742,14 +835,14 @@
 
 /obj/item/clothing/suit/vampire/trench/alt/armored
 	name = "armored trenchcoat"
-	armor = list(BASHING = 3, LETHAL = 4, AGGRAVATED = 1, MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/armored
 	max_integrity = 1000
 
 /obj/item/clothing/suit/vampire/caftan
 	name = "red caftan"
 	desc = "Best clothes for a bogatyr. Provides some kind of protection."
 	icon_state = "caftan_red"
-	armor = list(BASHING = 3, LETHAL = 4, AGGRAVATED = 1, MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/armored
 
 /obj/item/clothing/suit/vampire/caftan/blue
 	name = "blue caftan"
@@ -765,13 +858,12 @@
 	name = "rich trenchcoat"
 	desc = "Best choise for pleasant life... or not. This trench smeels like blood."
 	icon_state = "strauss_coat"
-	armor = list(BASHING = 3, LETHAL = 4, AGGRAVATED = 1, MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 10, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 10, WOUND = 25)
+	armor_type =  /datum/armor/suit
 
 /obj/item/clothing/suit/vampire/trench/archive/pidors
 	desc = "Best choise for pleasant life... or not."
 	icon_state = "trench3"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
-
+	armor_type = /datum/armor/suit/armored
 /obj/item/clothing/suit/vampire/trench/archive/pidors/blue
 	desc = "Best choise for pleasant life... or not."
 	icon_state = "voicoat"
@@ -780,30 +872,57 @@
 	name = "fleshcoat"
 	desc = "HUMAN LEATHER JACKET."
 	icon_state = "trench_tzi"
-	armor = list(BASHING = 3, LETHAL = 3, AGGRAVATED = 1, MELEE = 50, BULLET = 50, LASER = 10, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 50)
+	armor_type = /datum/armor/suit/armored/tzi
 	clothing_traits = list(TRAIT_UNMASQUERADE)
+
+/datum/armor/suit/armored/tzi
+	lethal = 3
+	bomb = 25
+	acid = 10
 
 /obj/item/clothing/suit/vampire/trench/tzi/elder
 	name = "elder fleshcoat"
-	armor = list(BASHING = 4, LETHAL = 4, AGGRAVATED = 2, MELEE = 50, BULLET = 50, LASER = 10, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 50)
-	masquerade_violating = 1
+	armor_type = /datum/armor/suit/armored/tzi/elder
+	clothing_traits = list(TRAIT_UNMASQUERADE)
+
+/datum/armor/suit/armored/tzi/elder
+	bashing = 4
+	lethal = 4
+	aggravated = 2
+	wound = 50
+
 
 /obj/item/clothing/suit/vampire/vest
 	name = "bulletproof vest"
 	desc = "Durable, lightweight vest designed to protect against most threats efficiently."
 	icon_state = "vest"
-	armor = list(BASHING = 2, LETHAL = 4, AGGRAVATED = 3, MELEE = 55, BULLET = 55, LASER = 10, ENERGY = 10, BOMB = 55, BIO = 0, RAD = 0, FIRE = 45, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/armored/vest
 	allowed = list(
 		/obj/item/card/id,
 		/obj/item/flashlight,
 		/obj/item/melee/classic_baton/vampire,
 		/obj/item/restraints/handcuffs
 	)
+
+/datum/armor/suit/armored/vest
+	bashing = 2
+	aggravated = 3
+	melee = 55
+	bullet = 55
+	bomb = 55
+	fire = 45
+	wound = 25
+
 /obj/item/clothing/suit/vampire/vest/medieval
 	name = "medieval vest"
 	desc = "Probably spanish. Provides good protection."
 	icon_state = "medieval"
-	armor = list(BASHING = 4, LETHAL = 4, AGGRAVATED = 2, MELEE = 55, BULLET = 55, LASER = 10, ENERGY = 10, BOMB = 55, BIO = 0, RAD = 0, FIRE = 45, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/armored/vest/medieval
+
+/datum/armor/suit/armored/vest/medieval
+	bashing = 4
+	lethal = 4
+	aggravated = 2
 
 /obj/item/clothing/suit/vampire/vest/kon4atel
 	name = "Black trench"
@@ -827,15 +946,30 @@
 	name = "police chief duty vest"
 	icon_state = "chiefvest"
 	desc = "Composite bulletproof vest with SFPD markings, tailored for improved protection. This one has captain insignia on it."
-	armor = list(BASHING = 3, LETHAL = 5, AGGRAVATED = 3, MELEE = 70, BULLET = 70, LASER = 10, ENERGY = 10, BOMB = 60, BIO = 0, RAD = 0, FIRE = 50, ACID = 10, WOUND = 30)
+	armor_type = /datum/armor/suit/armored/vest/chief
+
+/datum/armor/suit/armored/vest/chief
+	bashing = 3
+	lethal = 5
+	melee = 70
+	bullet = 70
+	bomb = 60
+	fire = 50
+	wound = 30
 
 /obj/item/clothing/suit/vampire/vest/army
 	desc = "Army equipment. Provides great protection against blunt force."
 	icon_state = "army"
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list(BASHING = 4, LETHAL = 5, AGGRAVATED = 3, MELEE = 70, BULLET = 70, LASER = 10, ENERGY = 10, BOMB = 55, BIO = 0, RAD = 0, FIRE = 45, ACID = 10, WOUND = 25)
+	armor_type = /datum/armor/suit/armored/vest/chief/army
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
 	masquerade_violating = TRUE
+
+/datum/armor/suit/armored/vest/chief/army
+	bashing = 4
+	aggravated = 3
+	bomb = 55
+	wound = 25
 
 /obj/item/clothing/suit/vampire/eod
 	name = "EOD suit"
@@ -848,9 +982,17 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 2
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list(BASHING = 6, LETHAL = 5, AGGRAVATED = 3, MELEE = 90, BULLET = 90, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 0, RAD = 0, FIRE = 70, ACID = 90, WOUND = 50)
+	armor_type = /datum/armor/suit/armored/vest/chief/army/eod
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
 	masquerade_violating = TRUE
+
+/datum/armor/suit/armored/vest/chief/army/eod
+	bashing = 6
+	melee = 90
+	bomb = 100
+	fire = 70
+	acid = 90
+	wound = 50
 
 /obj/item/clothing/suit/vampire/bogatyr
 	name = "Bogatyr armor"
@@ -863,14 +1005,29 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = 1
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list(BASHING = 5, LETHAL = 5, AGGRAVATED = 3, MELEE = 75, BULLET = 75, LASER = 15, ENERGY = 15, BOMB = 20, BIO = 0, RAD = 0, FIRE = 55, ACID = 70, WOUND = 35)
+	armor_type = /datum/armor/suit/armored/vest/chief/army/bogatyr
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
+
+/datum/armor/suit/armored/vest/chief/army/bogatyr
+	bashing = 5
+	melee = 75
+	bullet = 75
+	energy = 15
+	bomb = 20
+	fire = 55
+	acid = 70
+	wound = 35
 
 /obj/item/clothing/suit/vampire/labcoat
 	name = "labcoat"
 	desc = "For medicine and research purposes."
 	icon_state = "labcoat"
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 90, WOUND = 10)
+	armor_type = /datum/armor/labcoat
+
+/datum/armor/labcoat
+	bashing = 1
+	acid = 90
+	wound = 10
 
 /obj/item/clothing/suit/vampire/fancy_gray
 	name = "fancy gray jacket"
@@ -892,31 +1049,31 @@
 	desc = "When I first tasted the fruit of the Trees,\
 			felt the seeds of Life and Knowledge, burn within me, I swore that day I would not turn back..."
 	icon_state = "bahari"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/suit
 
 /obj/item/clothing/suit/vampire/kasaya
 	name = "Kasaya"
 	desc = "A traditional robe worn by monks and nuns of the Buddhist faith."
 	icon_state = "kasaya"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/suit
 
 /obj/item/clothing/suit/vampire/imam
 	name = "Imam robe"
 	desc = "A traditional robe worn by imams of the Islamic faith."
 	icon_state = "imam"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/suit
 
 /obj/item/clothing/suit/vampire/noddist
 	name = "Noddist robe"
 	desc = "Shine black the sun! Shine blood the moon! Gehenna is coming soon."
 	icon_state = "noddist"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/suit
 
 /obj/item/clothing/suit/vampire/orthodox
 	name = "Orthodox robe"
 	desc = "A traditional robe worn by priests of the Orthodox faith."
 	icon_state = "vestments"
-	armor = list(BASHING = 1, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/suit
 
 //GLASSES
 
@@ -967,9 +1124,18 @@
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
 	body_worn = TRUE
 	cost = 10
+
+/datum/armor/head
+	bashing = 1
+	melee = 1
+	laser = 10
+	energy = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/head/vampire/bandana
 	name = "bandana"
@@ -1013,49 +1179,75 @@
 	name = "police hat"
 	desc = "Can look dangerous or sexy despite the circumstances. Provides some kind of protection."
 	icon_state = "law"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 20, BULLET = 20, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head/police
+
+/datum/armor/head/police
+	bashing = 2
+	lethal = 1
+	melee = 20
+	bullet = 20
+	laser = 10
+	energy = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/head/vampire/cowboy
 	name = "cowboy hat"
 	desc = "Looks cool anyway. Provides some kind of protection."
 	icon_state = "cowboy"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 20, BULLET = 20, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head/police
 
 /obj/item/clothing/head/vampire/british
 	name = "british police hat"
 	desc = "Want some tea? Provides some kind of protection."
 	icon_state = "briish"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 20, BULLET = 20, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head/police
+
+/datum/armor/historical
+	bashing = 2
+	lethal = 1
+
 
 /obj/item/clothing/head/vampire/napoleon
 	name = "french admiral hat"
 	desc = "Dans mon esprit tout divague, je me perds dans tes yeux... Je me noie dans la vague de ton regard amoureux..."
 	icon_state = "french"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
+	armor_type = /datum/armor/historical
 
 /obj/item/clothing/head/vampire/nazi
 	name = "german hat"
 	desc = "Du wirst immer ein Schwein sein!"
 	icon_state = "ss"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
+	armor_type = /datum/armor/historical
 
 /obj/item/clothing/head/vampire/musketeer
 	name = "musketeer hat"
 	desc = "Load thy barrels, poop-heads!"
 	icon_state = "musketeer_hat"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
+	armor_type = /datum/armor/historical
 
 /obj/item/clothing/head/vampire/top
 	name = "top hat"
 	desc = "Want some tea? Provides some kind of protection."
 	icon_state = "top"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
+	armor_type = /datum/armor/historical
 
 /obj/item/clothing/head/vampire/skull
 	name = "skull helmet"
 	desc = "Damn... Provides some kind of protection."
 	icon_state = "skull"
-	armor = list(BASHING = 2, LETHAL = 2, AGGRAVATED = 0, MELEE = 20, BULLET = 20, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head/skull
+
+/datum/armor/head/skull
+	bashing = 2
+	lethal = 2
+	melee = 20
+	bullet = 20
+	laser = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/head/vampire/helmet
 	name = "police helmet"
@@ -1064,10 +1256,23 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	armor = list(BASHING = 3, LETHAL = 3, AGGRAVATED = 1, MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 0, RAD = 0, FIRE = 20, ACID = 40, WOUND = 25)
+	armor_type = /datum/armor/helmet
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
 	masquerade_violating = TRUE
+
+/datum/armor/helmet
+	bashing = 3
+	lethal = 3
+	aggravated = 1
+	melee = 40
+	bullet = 40
+	laser = 40
+	energy = 40
+	bomb = 20
+	fire = 20
+	acid = 40
+	wound = 25
 
 /obj/item/clothing/head/vampire/helmet/egorium
 	name = "strange mask"
@@ -1084,9 +1289,14 @@
 	desc = "Concistador! Provides good protection."
 	icon_state = "spain"
 	flags_inv = HIDEEARS
-	armor = list(BASHING = 4, LETHAL = 4, AGGRAVATED = 2, MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 0, RAD = 0, FIRE = 20, ACID = 40, WOUND = 25)
+	armor_type = /datum/armor/helmet/spain
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	masquerade_violating = FALSE
+
+/datum/armor/helmet/spain
+	bashing = 4
+	lethal = 4
+	aggravated = 2
 
 /obj/item/clothing/head/vampire/army
 	name = "army helmet"
@@ -1095,21 +1305,42 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	armor = list(BASHING = 4, LETHAL = 6, AGGRAVATED = 3, MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 40, BIO = 0, RAD = 0, FIRE = 20, ACID = 40, WOUND = 25)
+	armor_type = /datum/armor/army
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
 	masquerade_violating = TRUE
+
+/datum/armor/army
+	bashing = 4
+	lethal = 6
+	aggravated = 3
+	melee = 60
+	laser = 60
+	energy = 60
+	bomb = 40
+	fire = 20
+	acid = 40
+	wound = 25
 
 /obj/item/clothing/head/vampire/hardhat
 	name = "construction helmet"
 	desc = "A thermoplastic hard helmet used to protect the head from injury."
 	icon_state = "hardhat"
-	armor = list(BASHING = 4, LETHAL = 2, AGGRAVATED = 0, MELEE = 20, BULLET = 5, LASER = 0, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 0, FIRE = 5, ACID = 0, WOUND = 15)
+	armor_type = /datum/armor/hardhat
+
+/datum/armor/hardhat
+	bashing = 4
+	lethal = 2
+	melee = 20
+	bullet = 5
+	bomb = 10
+	fire = 5
+	wound = 15
 
 /obj/item/clothing/head/vampire/eod
 	name = "EOD helmet"
 	desc = "Looks dangerous. Provides best protection against nearly everything."
 	icon_state = "bomb"
-	armor = list(BASHING = 6, LETHAL = 6, AGGRAVATED = 3, MELEE = 70, BULLET = 70, LASER = 90, ENERGY = 90, BOMB = 100, BIO = 0, RAD = 0, FIRE = 50, ACID = 90, WOUND = 40)
+	armor_type = /datum/armor/head/heavy
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
@@ -1120,11 +1351,25 @@
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
 	masquerade_violating = TRUE
 
+/datum/armor/head/heavy
+	bashing = 6
+	lethal = 6
+	aggravated = 3
+	melee = 70
+	bullet = 70
+	laser = 90
+	energy = 90
+	bomb = 100
+	fire = 50
+	acid = 90
+	wound = 40
+
+
 /obj/item/clothing/head/vampire/bogatyr
 	name = "Bogatyr helmet"
 	desc = "A regal helmet made of unknown materials."
 	icon_state = "bogatyr_helmet"
-	armor = list(BASHING = 6, LETHAL = 6, AGGRAVATED = 3, MELEE = 55, BULLET = 50, LASER = 60, ENERGY = 60, BOMB = 20, BIO = 0, RAD = 0, FIRE = 40, ACID = 70, WOUND = 30)
+	armor_type = /datum/armor/head/bogatyr
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
@@ -1133,6 +1378,16 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	w_class = WEIGHT_CLASS_BULKY
 //	clothing_traits = list(TRAIT_UNMASQUERADE)
+
+/datum/armor/head/heavy/bogatyr
+	melee = 55
+	bullet = 50
+	laser = 60
+	energy = 60
+	bomb = 20
+	fire = 40
+	acid = 70
+	wound = 30
 
 /obj/item/clothing/head/vampire/bahari_mask
 	name = "Dark mother's mask"
@@ -1142,7 +1397,17 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
+
+/datum/armor/head
+	bashing = 2
+	lethal = 1
+	melee = 10
+	laser = 10
+	energy = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/head/vampire/straw_hat
 	name = "straw hat"
@@ -1166,8 +1431,7 @@
 	name = "Noddist mask"
 	desc = "Shine black the sun! Shine blood the moon! Gehenna is coming soon."
 	icon_state = "noddist_mask"
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
-
+	armor_type = /datum/armor/head
 /obj/item/clothing/head/vampire/kalimavkion
 	name = "Kalimavkion"
 	desc = "A traditional hat worn by Orthodox priests."
@@ -1203,7 +1467,13 @@
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list(BASHING = 2, LETHAL = 0, AGGRAVATED = 0, MELEE = 15, BULLET = 15, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 30)
+	armor_type = /datum/armor/gloves
+
+/datum/armor/gloves
+	bashing = 2
+	melee = 15
+	bullet = 15
+	acid = 30
 
 /obj/item/clothing/gloves/vampire/work
 	name = "work gloves"
@@ -1215,7 +1485,11 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list(BASHING = 2, LETHAL = 0, AGGRAVATED = 0, MELEE = 30, BULLET = 15, LASER = 0, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 0, FIRE = 70, ACID = 30)
+	armor_type = /datum/armor/gloves/work
+
+/datum/armor/gloves/work
+	fire = 70
+	acid = 70
 
 /obj/item/clothing/gloves/vampire/investigator
 	name = "investigator gloves"
@@ -1227,19 +1501,22 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list(BASHING = 2, LETHAL = 0, AGGRAVATED = 0, MELEE = 30, BULLET = 20, LASER = 5, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 70, ACID = 70)
+	armor_type = /datum/armor/gloves/work
 
 /obj/item/clothing/gloves/vampire/cleaning
 	name = "cleaning gloves"
 	desc = "Provides acid protection."
 	icon_state = "cleaning"
-	armor = list(BASHING = 0, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 70)
+	armor_type = /datum/armor/cleaning
+
+/datum/armor/cleaning
+	acid = 70
 
 /obj/item/clothing/gloves/vampire/latex
 	name = "latex gloves"
 	desc = "Provides acid protection."
 	icon_state = "latex"
-	armor = list(BASHING = 0, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 70)
+	armor_type = /datum/armor/cleaning
 
 //NECK
 
@@ -1416,7 +1693,7 @@
 
 
 //PENTEX
-/obj/item/clothing/under/pentex/
+/obj/item/clothing/under/pentex
 	desc = "Some clothes."
 	name = "clothes"
 	icon_state = "error"
@@ -1425,17 +1702,25 @@
 	can_adjust = FALSE
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 15)
+	armor_type = /datum/armor/pntx
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	body_worn = TRUE
 	female_sprite_flags = NO_FEMALE_UNIFORM
 	cost = 10
 
+/datum/armor/pntx
+	wound = 15
+
 /obj/item/clothing/under/pentex/pentex_janitor
 	name = "Ardus Enterprises custodian jumpsuit"
 	desc = "An Ardus Enterprises custodian's uniform."
 	icon_state = "pentex_janitor"
-	armor = list(BIO = 100, ACID = 15, RAD = 5)
+	armor_type = /datum/armor/pntx/janitor
+
+/datum/armor/pntx/janitor
+	bio = 100
+	acid = 15
+	rad = 5
 
 /obj/item/clothing/under/pentex/pentex_shortsleeve
 	name = "Endron polo-shirt"
@@ -1484,27 +1769,36 @@
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	max_integrity = 250
 	resistance_flags = NONE
-	armor = list(BASHING = 2, LETHAL = 0, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/pentex
 	body_worn = TRUE
 	cost = 15
+
+/datum/armor/pentex
+	bashing = 2
+	melee = 10
+	laser = 10
+	energy = 10
+	bomb = 10
+	acid = 10
+	wound = 10
 
 /obj/item/clothing/suit/pentex/pentex_labcoat
 	name = "Endron labcoat"
 	desc = "A crisp white labcoat. This one has the Endron International logo stiched onto the breast!"
 	icon_state = "pentex_closedlabcoat"
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 90, WOUND = 10)
+	armor_type = /datum/armor/labcoat
 
 /obj/item/clothing/suit/pentex/pentex_labcoat_alt
 	name = "Endron labcoat"
 	desc = "A crisp white labcoat. This one has a green trim and the Endron International logo stiched onto the breast!"
 	icon_state = "pentex_labcoat_alt"
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 90, WOUND = 10)
+	armor_type = /datum/armor/labcoat
 
 /obj/item/clothing/head/pentex
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
 	body_worn = TRUE
 	cost = 10
 
@@ -1544,7 +1838,7 @@
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	icon_state = "berendeyka_red"
 	flags_inv = HIDEHAIR
-	armor = list(BASHING = 2, LETHAL = 1, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
 	body_worn = TRUE
 	cost = 10
 
@@ -1563,7 +1857,7 @@
 	name ="Yellow working helmet"
 	desc = "A helmet for workers and uzbek gastarbaiters"
 	icon_state = "rabochii"
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
 	flags_inv = HIDEHAIR
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
@@ -1584,7 +1878,7 @@
 	name = "Yellow working vest"
 	desc = "A vest for workers and uzbek gastarbaiters"
 	icon_state = "jeletka"
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
@@ -1596,7 +1890,7 @@
 	name = "Ushanka"
 	desc = "For cold winters!"
 	icon_state = "ushanka_1"
-	armor = list(BASHING = 1, LETHAL = 0, AGGRAVATED = 0, MELEE = 10, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 10, WOUND = 10)
+	armor_type = /datum/armor/head
 	flags_inv = HIDEHAIR
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
