@@ -11,7 +11,7 @@
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	body_worn = TRUE
 	female_sprite_flags = NO_FEMALE_UNIFORM
-	cost = 10
+	vampire_cost = 10
 
 /datum/armor/under
 	wound = 15
@@ -435,7 +435,7 @@
 	tied = SHOES_UNTIED
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	body_worn = TRUE
-	cost = 5
+	vampire_cost = 5
 
 /obj/item/clothing/shoes/vampire/brown
 	icon_state = "shoes_brown"
@@ -516,7 +516,7 @@
 	resistance_flags = NONE
 	armor_type = /datum/armor/suit
 	body_worn = TRUE
-	cost = 15
+	vampire_cost = 15
 
 /datum/armor/suit
 	bashing = 1
@@ -554,7 +554,7 @@
 
 /obj/item/clothing/head/hooded/heisenberg_hood
 	name = "chemical hood"
-	desc = "A hood attached to a cchemical costume."
+	desc = "A hood attached to a chemical costume."
 	icon_state = "heisenberg_helm"
 	icon = 'code/modules/wod13/clothing.dmi'
 	worn_icon = 'code/modules/wod13/worn.dmi'
@@ -1126,7 +1126,7 @@
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	armor_type = /datum/armor/head
 	body_worn = TRUE
-	cost = 10
+	vampire_cost = 10
 
 /datum/armor/head
 	bashing = 1
@@ -1706,7 +1706,7 @@
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	body_worn = TRUE
 	female_sprite_flags = NO_FEMALE_UNIFORM
-	cost = 10
+	vampire_cost = 10
 
 /datum/armor/pntx
 	wound = 15
@@ -1770,7 +1770,7 @@
 	resistance_flags = NONE
 	armor_type = /datum/armor/pentex
 	body_worn = TRUE
-	cost = 15
+	vampire_cost = 15
 
 /datum/armor/pentex
 	bashing = 2
@@ -1799,7 +1799,7 @@
 	onflooricon = 'code/modules/wod13/onfloor.dmi'
 	armor_type = /datum/armor/head
 	body_worn = TRUE
-	cost = 10
+	vampire_cost = 10
 
 /obj/item/clothing/head/pentex/pentex_yellowhardhat
 	name = "Endron hardhat"
@@ -1839,7 +1839,7 @@
 	flags_inv = HIDEHAIR
 	armor_type = /datum/armor/head
 	body_worn = TRUE
-	cost = 10
+	vampire_cost = 10
 
 /obj/item/clothing/head/berendeyka/blue
 	name = "blue berendeyka"

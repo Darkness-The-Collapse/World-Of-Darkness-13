@@ -1,3 +1,4 @@
+// THIS IS A WOD13 UI FILE
 import { Component } from 'react';
 
 import { GetAppByName, GetIconByName } from '../functions';
@@ -54,11 +55,11 @@ export class Window extends Component {
     if (dragPos && isDragging) {
       e.preventDefault();
       const { screenZoomX, screenZoomY, screenX, screenY } = e;
-      let xPos = screenZoomX || screenX;
-      let yPos = screenZoomY || screenY;
+      const xPos = screenZoomX || screenX;
+      const yPos = screenZoomY || screenY;
       if (lastMousePos) {
-        let rel_x = dragPos.x - (lastMousePos.x - xPos);
-        let rel_y = dragPos.y - (lastMousePos.y - yPos);
+        const rel_x = dragPos.x - (lastMousePos.x - xPos);
+        const rel_y = dragPos.y - (lastMousePos.y - yPos);
         this.setState({
           dragPos: {
             x: rel_x,

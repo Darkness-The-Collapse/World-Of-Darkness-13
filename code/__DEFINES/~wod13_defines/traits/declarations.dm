@@ -63,9 +63,6 @@
 #define TRAIT_PAIN_NUMBING "pain_numbing" // Trait owner is able to ignore difficulty increase while at low health
 #define TRAIT_PAIN_CANT_HEAL "pain_cant_heal" // Trait owner can't heal their wounds without using Willpower
 
-/// Trait given to a mob that is currently thinking (giving off the "thinking" icon), used in an IC context
-#define TRAIT_THINKING_IN_CHARACTER "currently_thinking_IC"
-
 /// Trait from Daimonion 5 Lying Weakness
 #define TRAIT_LYING_WEAKNESS "lying_weakness"
 /// Trait from Daimonion 1

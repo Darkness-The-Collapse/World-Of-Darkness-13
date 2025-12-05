@@ -75,8 +75,8 @@
 			var/mob/living/L = H.pulling
 			L.bloodpool = min(L.maxbloodpool, L.bloodpool+2)
 			H.bloodpool = max(0, H.bloodpool-2)
-			L.adjustBruteLoss(-25)
-			L.adjustFireLoss(-25)
+			L.adjust_brute_loss(-25)
+			L.adjust_fire_loss(-25)
 		if(istype(H.pulling, /mob/living/carbon/human))
 			var/mob/living/carbon/human/BLOODBONDED = H.pulling
 			if(iscathayan(BLOODBONDED) || iszombie(BLOODBONDED))
@@ -164,7 +164,7 @@
 						message_admins("[ADMIN_LOOKUPFLW(H)] has Embraced [ADMIN_LOOKUPFLW(BLOODBONDED)].")
 						giving = FALSE
 						var/save_data_v = FALSE
-						if(BLOODBONDED.revive(full_heal = TRUE, admin_revive = TRUE))
+						if(BLOODBONDED.revive(ADMIN_HEAL_ALL))
 							BLOODBONDED.grab_ghost(force = TRUE)
 							to_chat(BLOODBONDED, "<span class='userdanger'>You rise with a start, you're alive! Or not... You feel your soul going somewhere, as you realize you are embraced by a vampire...</span>")
 							var/response_v = input(BLOODBONDED, "Do you wish to keep being a vampire on your save slot?(Yes will be a permanent choice and you can't go back!)") in list("Yes", "No")
@@ -253,12 +253,12 @@
 
 					if(H.reagents)
 						if(length(H.reagents.reagent_list))
-							H.reagents.trans_to(BLOODBONDED, min(5, H.reagents.total_volume), transfered_by = H, methods = VAMPIRE)
-					BLOODBONDED.adjustBruteLoss(-25, TRUE)
+							H.reagents.trans_to(BLOODBONDED, min(5, H.reagents.total_volume), transferred_by = H, methods = VAMPIRE)
+					BLOODBONDED.adjust_brute_loss(-25, TRUE)
 					if(length(BLOODBONDED.all_wounds))
 						var/datum/wound/W = pick(BLOODBONDED.all_wounds)
 						W.remove_wound()
-					BLOODBONDED.adjustFireLoss(-25, TRUE)
+					BLOODBONDED.adjust_fire_loss(-25, TRUE)
 					BLOODBONDED.bloodpool = min(BLOODBONDED.maxbloodpool, BLOODBONDED.bloodpool+2)
 					giving = FALSE
 

@@ -1,9 +1,10 @@
+// THIS IS A WOD13 UI FILE
 import notepadIcon from '../../assets/WindowsXP/327(32x32).png';
 import errorIcon from '../../assets/WindowsXP/897(32x32).png';
 import gmailicon from '../../assets/WindowsXP/gmail_icon.png';
 import icqIcon from '../../assets/WindowsXP/icq.png';
 import newsIcon from '../../assets/WindowsXP/news.png';
-import { Error } from './Apps/Error';
+import { ErrorMessage } from './Apps/ErrorMessage';
 import { Gmail } from './Apps/Gmail';
 import { ICQ as Icq } from './Apps/ICQ';
 import { News } from './Apps/News';
@@ -33,7 +34,7 @@ export const GetAppByName = (app, act) => {
     case 'notepad':
       return <Notepad app={app} act={act} />;
     case 'error':
-      return <Error app={app} act={act} />;
+      return <ErrorMessage app={app} act={act} />;
     case 'gmail':
       return <Gmail app={app} act={act} />;
     case 'news':

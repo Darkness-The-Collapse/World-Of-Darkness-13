@@ -46,7 +46,8 @@
 	damage = 60
 	var/fire_stacks = 4
 
-/obj/projectile/beam/beam_rifle/vampire/vamp545mm/holy/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp545mm/holy/on_hit(atom/target, blocked = FALSE, pierce_hit)
+	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
@@ -59,7 +60,7 @@
 	exposed_wound_bonus = 10
 	wound_bonus = 5
 
-/obj/projectile/beam/beam_rifle/vampire/vamp12g/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp12g/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
@@ -73,7 +74,7 @@
 	exposed_wound_bonus = 5
 	wound_bonus = 0
 
-/obj/projectile/beam/beam_rifle/vampire/shotpellet/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/shotpellet/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
@@ -84,7 +85,8 @@
 	damage = 30
 	var/fire_stacks = 4
 
-/obj/projectile/beam/beam_rifle/vampire/vamp556mm/incendiary/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp556mm/incendiary/on_hit(atom/target, blocked = FALSE, pierce_hit)
+	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
@@ -299,14 +301,14 @@
 //				adjust_gnosis(-1, M)
 //		else
 //			M.Stun(10)
-//			M.adjustBruteLoss(50, TRUE)
+//			M.adjust_brute_loss(50, TRUE)
 
 /obj/projectile/beam/beam_rifle/vampire/vamp556mm/silver
 	name = "5.56mm silver bullet"
 	armour_penetration = 0
 	damage = 35
 
-/obj/projectile/beam/beam_rifle/vampire/vamp556mm/silver/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp556mm/silver/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	if(iswerewolf(target) || isgarou(target))
 		var/mob/living/carbon/M = target
@@ -316,7 +318,7 @@
 		else
 			M.Stun(1 SECONDS)
 			M.Immobilize(1 SECONDS)
-			M.adjustBruteLoss(50, TRUE)
+			M.adjust_brute_loss(50, TRUE)
 		if(!M.has_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown))
 			M.add_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown)
 			spawn(7 SECONDS)
@@ -326,7 +328,7 @@
 	name = "9mm silver bullet"
 	damage = 23
 
-/obj/projectile/beam/beam_rifle/vampire/vamp9mm/silver/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp9mm/silver/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	if(iswerewolf(target) || isgarou(target))
 		var/mob/living/carbon/M = target
@@ -335,7 +337,7 @@
 				adjust_gnosis(-1, M)
 		else
 			M.Stun(1 SECONDS)
-			M.adjustBruteLoss(25, TRUE)
+			M.adjust_brute_loss(25, TRUE)
 		if(!M.has_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown))
 			M.add_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown)
 			spawn(5 SECONDS)
@@ -345,7 +347,7 @@
 	name = ".45 ACP silver bullet"
 	damage = 25
 
-/obj/projectile/beam/beam_rifle/vampire/vamp45acp/silver/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp45acp/silver/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	if(iswerewolf(target) || isgarou(target))
 		var/mob/living/carbon/M = target
@@ -354,7 +356,7 @@
 				adjust_gnosis(-1, M)
 		else
 			M.Stun(1 SECONDS)
-			M.adjustBruteLoss(30, TRUE)
+			M.adjust_brute_loss(30, TRUE)
 		if(!M.has_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown))
 			M.add_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown)
 			spawn(5 SECONDS)
@@ -366,7 +368,7 @@
 	armour_penetration = 0
 	icon_state = "s44"
 
-/obj/projectile/beam/beam_rifle/vampire/vamp44/silver/on_hit(atom/target, blocked = FALSE)
+/obj/projectile/beam/beam_rifle/vampire/vamp44/silver/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	if(iswerewolf(target) || isgarou(target))
 		var/mob/living/carbon/M = target
@@ -376,7 +378,7 @@
 		else
 			M.Stun(2 SECONDS)
 			M.Immobilize(1 SECONDS)
-			M.adjustBruteLoss(40, TRUE)
+			M.adjust_brute_loss(40, TRUE)
 		if(!M.has_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown))
 			M.add_movespeed_modifier(/datum/movespeed_modifier/silver_slowdown)
 			spawn(7 SECONDS)

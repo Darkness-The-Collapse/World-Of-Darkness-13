@@ -1,3 +1,4 @@
+// THIS IS A WOD13 UI FILE
 import risk from '../../assets/WindowsXP/229(16x16).png';
 import usb from '../../assets/WindowsXP/394(16x16).png';
 import sound from '../../assets/WindowsXP/690(16x16).png';
@@ -19,7 +20,7 @@ export const Footer = (props) => {
       hour = 12;
     }
     if (min < 10) {
-      min = '0' + min;
+      min = `0${min}`;
     }
     return `${hour}:${min} ${hourPostFix}`;
   };

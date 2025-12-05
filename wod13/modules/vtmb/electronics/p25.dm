@@ -552,7 +552,7 @@
 
 	return ITALICS | REDUCE_RANGE
 
-/obj/item/p25radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
+/obj/item/p25radio/Hear(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, radio_freq_name, radio_freq_color, list/spans, list/message_mods, message_range)
 	. = ..()
 	if(!can_receive(speaker, message_mods))
 		return
@@ -570,13 +570,13 @@
 	playsound(src, 'wod13/modules/vtmb/sound/effects/radioclick.ogg', 30, FALSE)
 
 /obj/item/p25radio/click_alt(mob/user)
-	if(!user.can_perform_action(src, be_close = TRUE))
+	if(!user.can_perform_action(src))
 		return
 	powered = !powered
 	to_chat(user, "<span class='notice'>You turn the radio [powered ? "ON" : "OFF"].</span>")
 	playsound(src, 'wod13/modules/vtmb/sound/effects/radioonn.ogg', 100, FALSE)
 
-/obj/item/p25radio/Moved()
+/obj/item/p25radio/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
 	. = ..()
 	check_signal()
 
@@ -634,7 +634,7 @@
 	return TRUE
 
 /obj/item/p25radio/police/click_alt(mob/user)
-	if(!user.can_perform_action(src, be_close = TRUE))
+	if(!user.can_perform_action(src))
 		return
 
 	var/list/choices = list(
@@ -644,7 +644,7 @@
 	)
 
 	var/choice = input(user, "Select an option:", "[src]") as null|anything in choices
-	if(!choice || !user.can_perform_action(src, be_close = TRUE))
+	if(!choice || !user.can_perform_action(src))
 		return
 
 	switch(choices[choice])

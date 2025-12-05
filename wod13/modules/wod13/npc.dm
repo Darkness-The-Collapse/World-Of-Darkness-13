@@ -573,7 +573,7 @@
 
 /mob/living/carbon/human/npc/proc/ghoulificate(mob/owner)
 	set waitfor = FALSE
-	var/mob/chosen_one = SSpolling.poll_ghosts_for_target("Do you want to play as [owner]`s ghoul?", poll_time = 10 SECONDS, target_mob = src)
+	var/mob/chosen_one = SSpolling.poll_ghosts_for_target("Do you want to play as [owner]`s ghoul?", poll_time = 10 SECONDS, checked_target = src)
 	for(var/mob/dead/observer/G in GLOB.player_list)
 		if(G.key)
 			to_chat(G, "<span class='ghostalert'>[owner] is ghoulificating [src].</span>")
