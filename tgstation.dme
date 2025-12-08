@@ -6883,4 +6883,6 @@
 #include "wod13\modules\wod13\witness.dm"
 #include "wod13\modules\wod13\datums\armor.dm"
 #include "wod13\modules\wod13\objects\items\clothcode.dm"
+#include "wod13\modules\wod13\objects\items\doors.dm"
+#include "wod13\modules\wod13\objects\items\keys.dm"
 // END_INCLUDE
