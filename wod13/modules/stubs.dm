@@ -1,9 +1,4 @@
 // TEMPORAL DEFINES, DATUMS ETC. WHILE BUILD TRANSFERING TO MODERN TG
-
-#define LETHAL "lethal"
-#define BASHING "bashing"
-
-
 /datum/species/ghoul
 	var/mob/living/carbon/human/master
 	var/changed_master = FALSE
