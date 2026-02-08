@@ -54,11 +54,6 @@
 	var/pincode
 /proc/find_door_pin(door_type)
 /datum/garou_tribe/wendigo
-
-/datum/vampireclane/true_brujah
-/datum/vampireclane/brujah
-/datum/vampireclane/old_clan_tzimisce
-/datum/vampireclane/tzimisce
 /datum/chi_discipline
 	var/level
 /datum/chi_discipline/proc/post_gain(mob/living/carbon/human/user)
@@ -68,9 +63,10 @@
 	var/datum/chi_discipline/discipline
 	var/active_check = FALSE
 
-/datum/vampireclane/caitiff
-/obj/effect/landmark/sarcophagus
 /datum/antagonist/sabbatist
 /datum/antagonist/noddist
 /proc/get_gen_bloodpool(gen)
 /mob/living/proc/update_blood_hud()
+/datum/discipline/auspex
+/datum/discipline/dominate
+/datum/discipline/vicissitude

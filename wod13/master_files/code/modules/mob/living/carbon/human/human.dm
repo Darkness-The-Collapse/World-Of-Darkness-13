@@ -21,6 +21,12 @@
 	var/can_be_embraced = TRUE
 	COOLDOWN_DECLARE(blush_timer)
 
+	var/hided = FALSE
+	var/additional_hands = FALSE
+	var/additional_wings = FALSE
+	var/additional_centipede = FALSE
+	var/additional_armor = FALSE
+
 /mob/living/carbon/human/Initialize(mapload)
 	. = ..()
 	phonevoicetag = length(GLOB.human_list)+10

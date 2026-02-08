@@ -28,6 +28,35 @@
 	)
 	var/roundstart_fix = FALSE
 
+/obj/structure/vampdoor
+	name = "\improper door"
+	desc = "It opens and closes."
+	icon = 'code/modules/wod13/doors.dmi'
+	icon_state = "door-1"
+	plane = GAME_PLANE
+	layer = ABOVE_ALL_MOB_LAYER
+	pixel_w = -16
+	anchored = TRUE
+	density = TRUE
+	opacity = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+	var/baseicon = "door"
+
+	var/magic_lock = FALSE
+	var/closed = TRUE
+	var/locked = FALSE
+	var/lock_id = "nothing"
+	var/glass = FALSE
+	var/hacking = FALSE
+	var/lockpick_timer = 5 SECONDS //[Lucifernix] - Never have the lockpick timer lower than 7. At 7 it will unlock instantly!!
+	var/lockpick_difficulty = 2
+
+	var/open_sound = 'code/modules/wod13/sounds/door_open.ogg'
+	var/close_sound = 'code/modules/wod13/sounds/door_close.ogg'
+	var/lock_sound = 'code/modules/wod13/sounds/door_locked.ogg'
+	var/burnable = FALSE
+
 #undef LOCKDIFFICULTY_1
 #undef LOCKTIMER_1
 #undef LOCKDIFFICULTY_2
