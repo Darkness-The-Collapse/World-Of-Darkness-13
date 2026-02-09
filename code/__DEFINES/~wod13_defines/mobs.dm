@@ -1,1 +1,5 @@
 #define SPECIES_KINDRED "kindred"
+
+#define SOUL_PRESENT 1
+#define SOUL_ABSENT 2
+#define SOUL_PROJECTING 3

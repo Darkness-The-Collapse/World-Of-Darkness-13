@@ -53,3 +53,6 @@
 	var/fakediablerist = FALSE
 
 	var/active_blush = FALSE
+
+	//For ghosts
+	var/soul_state = SOUL_PRESENT

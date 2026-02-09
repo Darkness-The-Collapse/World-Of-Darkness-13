@@ -27,6 +27,9 @@
 	var/additional_centipede = FALSE
 	var/additional_armor = FALSE
 
+	///Character's chronological age
+	var/chronological_age = 30
+
 /mob/living/carbon/human/Initialize(mapload)
 	. = ..()
 	phonevoicetag = length(GLOB.human_list)+10

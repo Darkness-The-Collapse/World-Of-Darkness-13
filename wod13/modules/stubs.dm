@@ -29,6 +29,7 @@
 /mob/living/carbon/proc/CheckFrenzyMove()
 	return TRUE
 /datum/warform
+	var/mob/living/carbon/human/humanform
 /datum/warform/proc/transform(animal_atom, mob/living/carbon/human/owner, masquerady = TRUE, time)
 
 /mob/living/simple_animal
@@ -67,6 +68,5 @@
 /datum/antagonist/noddist
 /proc/get_gen_bloodpool(gen)
 /mob/living/proc/update_blood_hud()
-/datum/discipline/auspex
 /datum/discipline/dominate
 /datum/discipline/vicissitude
